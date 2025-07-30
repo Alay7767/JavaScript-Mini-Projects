@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Cricket Game</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        h1 {
+            font-style: oblique;
+        }
+        .button {
+            margin: 5px;
+        }
+        .rules {
+            margin-top: 50px;
+            border: 2px solid red;
+            width: 180px;
+            text-align: left;
+            margin-left: 55px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Bat Ball Stump Game</h1>
+
+        <button class="button" onclick="
+        
+        // This will generate random number between 0 and 3
+        let computerChoice = generateComputerChoice();
+
+        resultMSG = getResult('Bat', computerChoice);
+        showResult('Bat', computerChoice, resultMSG);
+        ">Bat</button>
+
+        <button class="button" onclick="
+        // This will generate random number between 0 and 3
+        computerChoice = generateComputerChoice();
+        resultMSG = getResult('Ball', computerChoice);
+        showResult('Ball', computerChoice, resultMSG);
+        ">Ball</button>
+        
+        <button class="button" onclick="
+        // This will generate random number between 0 and 3
+        computerChoice = generateComputerChoice();
+        resultMSG = getResult('Stump',computerChoice);
+        showResult('Stump', computerChoice, resultMSG);
+        ">Stump</button>
+
+        <div class="rules">
+            <div class="first-rule">1) Bat defeats Ball.</div>
+            <div class="second-rule">2) Ball defeats Stump.</div>
+            <div class="third-rule">3) Stump defeats Bat.</div>
+            <div class="forth-rule">4) If chose same than tie.</div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script>
+        function generateComputerChoice() {
+            let randomNumber = Math.random() * 3;
+            if(randomNumber > 0 && randomNumber <= 1){
+                return 'Bat';
+            } else if(randomNumber > 1 && randomNumber <= 2) {
+                return 'Ball';
+            } else {
+                return 'Stump';
+            
+            }
+        }
+
+        function getResult (userMove, computerMove) {
+            if (userMove == 'Ball'){
+                if(computerMove == 'Ball'){
+                    return 'Tie !!';
+                } else if (computerMove == 'Bat'){
+                    return 'Computer has won';
+                } else if (computerMove == 'Stump'){
+                    return 'User has Won';
+                }
+            } else if (userMove == 'Bat'){
+                 if(computerMove == 'Ball'){
+                    return 'User has won';
+                } else if (computerMove == 'Bat'){
+                    return 'Tie !!';
+                } else if (computerMove == 'Stump'){
+                    return 'Computer has Won';
+                }
+            } else {
+                 if(computerMove == 'Ball'){
+                    return 'Computer has won';
+                } else if (computerMove == 'Bat'){
+                    return 'User has won';
+                } else if (computerMove == 'Stump'){
+                    return 'Tie !!';
+                }
+            }
+        }
+
+        function showResult (userMove, computerMove, result){
+            alert(`You have chosen ${userMove}. Computer have chosen ${computerMove}. Result is ${result}`)
+        }
+    </script>
+</body>
+</html>

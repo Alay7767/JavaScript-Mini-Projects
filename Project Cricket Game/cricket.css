@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-style: oblique;
+}
+
+.button {
+    margin: 5px;
+}
+
+.rules {
+    margin-top: 50px;
+    border: 2px solid red;
+    width: 180px;
+    text-align: left;
+    padding: 5px;
+}
+
+.choice-button{
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 15px;
+    background-color: lightgreen;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.choice-image{
+    height: 75px;
+    background-color: lightgreen;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
